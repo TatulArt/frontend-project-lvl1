@@ -1,8 +1,8 @@
 install: #npmInstall
 	npm install
 
-brain-games: #screenShit
-	node bin/brain-games.js
+start: #screenShit
+	node -r esm bin/brain-games.js
 
 publish: #NamesIsHard
 	npm publish --dry-run
