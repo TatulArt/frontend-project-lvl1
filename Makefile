@@ -6,3 +6,6 @@ start: #screenShit
 
 publish: #NamesIsHard
 	npm publish --dry-run
+
+lint: #linterStarter
+	npx eslint ..
