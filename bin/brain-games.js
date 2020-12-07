@@ -1,4 +1,10 @@
 #!/usr/bin/env node
-import { nameQuestion } from '../src/cli.js';
+const readlineSync = require('readline-sync');
+
+const nameQuestion = () => {
+  const answer = readlineSync.question('May I have your name? ');
+  return answer;
+};
+
 console.log('Welcome to the Brain Games!');
-console.log('Hello,' + ' ' + nameQuestion() + '!');
+console.log('Hello, ' + nameQuestion() + '!');
