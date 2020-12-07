@@ -17,9 +17,6 @@ jobs:
 
     - name: 'install npm'
       run: npm i
-    
-    - name: 'install npx'
-      run: npm install -g npx
       
     - name: 'test'
       run: make lint
