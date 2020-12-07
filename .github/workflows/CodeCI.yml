@@ -14,9 +14,6 @@ jobs:
       name: 'setup node'
       with:
         node-version: '14.15.1'
-
-    - name: 'install npm'
-      run: npm i
       
     - name: 'test'
       run: make lint
