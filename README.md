@@ -5,4 +5,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability)
 
-[![asciicast](https://asciinema.org/a/5kxJd2EmLZ5JWks8Ros33o2Qd.svg)](https://asciinema.org/a/5kxJd2EmLZ5JWks8Ros33o2Qd)
+[![asciicast](https://asciinema.org/a/jbKhJhtcDCpaHDWCvwsfTkWGm.svg)](https://asciinema.org/a/jbKhJhtcDCpaHDWCvwsfTkWGm)
+
+[![asciicast](https://asciinema.org/a/MkkA3CbOHyjKuB4va8tmEUoGI.svg)](https://asciinema.org/a/MkkA3CbOHyjKuB4va8tmEUoGI)

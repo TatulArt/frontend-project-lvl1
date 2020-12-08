@@ -1,11 +1,14 @@
-install: #npmInstall
+install:
 	npm install
 
-start: #screenShit
+start:
 	node -r esm bin/brain-games.js
 
-publish: #NamesIsHard
+publish:
 	npm publish --dry-run
 
-lint: #linterStarter
+lint:
 	npx eslint ..
+
+package:
+	npm link
