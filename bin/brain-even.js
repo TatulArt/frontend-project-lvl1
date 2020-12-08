@@ -57,6 +57,6 @@ while (iterCounter < 3 && isAnswerRight === true) {
   iterCounter += 1;
 }
 
-if (iterCounter === 3) {
+if (iterCounter === 3 && isAnswerRight === true) {
   console.log('Congratulations, ' + username + '!');
 }
