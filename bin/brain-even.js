@@ -2,21 +2,16 @@
 const readlineSync = require('readline-sync');
 
 console.log('Welcome to the Brain Games!');
+const username = readlineSync.question('May I have your name? ');
+console.log('Hello, ' + username);
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-const nameQuestion = () => {
-  const answer = readlineSync.question('May I have your name? ');
-  return answer;
-};
-const username = nameQuestion();
 let iterCounter = 0;
 let isAnswerRight = true;
-
-console.log('Hello, ' + username);
 
 const gameEven = () => {
   const randomNumber = Math.floor(Math.random() * (20 - 1)) + 1;
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   console.log('Question: ' + randomNumber);
   const userAnswer = readlineSync.question('Your answer: ');
 

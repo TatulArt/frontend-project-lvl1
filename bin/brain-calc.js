@@ -2,17 +2,12 @@
 const readlineSync = require('readline-sync');
 
 console.log('Welcome to the Brain Games!');
-
-const nameQuestion = () => {
-  const answer = readlineSync.question('May I have your name? ');
-  return answer;
-};
-const username = nameQuestion();
-let iterCounter = 0;
-let isAnswerRight = true;
-
+const username = readlineSync.question('May I have your name? ');
 console.log('Hello, ' + username);
 console.log('What is the result of the expression?');
+
+let iterCounter = 0;
+let isAnswerRight = true;
 
 const gameCalc = () => {
   const FirstRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
