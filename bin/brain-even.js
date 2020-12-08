@@ -7,10 +7,11 @@ const nameQuestion = () => {
   const answer = readlineSync.question('May I have your name? ');
   return answer;
 };
-
 const username = nameQuestion();
 let iterCounter = 0;
 let isAnswerRight = true;
+
+console.log('Hello, ' + username);
 
 const gameEven = () => {
   const randomNumber = Math.floor(Math.random() * (20 - 1)) + 1;
@@ -53,7 +54,7 @@ const gameEven = () => {
     console.log('Correct!');
   }
 
-// Проверка кончилась
+  // Проверка кончилась
 };
 
 while (iterCounter < 3 && isAnswerRight === true) {
