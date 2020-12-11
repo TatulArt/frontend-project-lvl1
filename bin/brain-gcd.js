@@ -16,16 +16,16 @@ const getSmallestNumber = (firstNum, secondNum) => {
 };
 
 const gameGCD = () => {
-  const FirstRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
-  const SecondRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
-  const smallestNumber = getSmallestNumber(FirstRandomNumber, SecondRandomNumber);
+  const firstRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
+  const secondRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
+  const smallestNumber = getSmallestNumber(firstRandomNumber, secondRandomNumber);
   let GCD = 1;
 
-  console.log('Question: ' + FirstRandomNumber + ' ' + SecondRandomNumber);
+  console.log('Question: ' + firstRandomNumber + ' ' + secondRandomNumber);
   const userAnswer = readlineSync.question('Your answer: ');
 
   for (let i = 1; i <= smallestNumber; i++) {
-    if (FirstRandomNumber % i === 0 && SecondRandomNumber % i === 0) {
+    if (firstRandomNumber % i === 0 && secondRandomNumber % i === 0) {
       GCD = String(i);
     }
   }
