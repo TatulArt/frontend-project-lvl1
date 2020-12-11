@@ -10,14 +10,14 @@ let iterCounter = 0;
 let isAnswerRight = true;
 
 const gameCalc = () => {
-  const FirstRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
-  const SecondRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
+  const firstRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
+  const secondRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
   const operation = Math.floor(Math.random() * (4 - 1)) + 1;
 
   // Сложение
   if (operation === 1) {
-    console.log('Question: ' + FirstRandomNumber + ' + ' + SecondRandomNumber);
-    const correctAnswer = String(FirstRandomNumber + SecondRandomNumber);
+    console.log('Question: ' + firstRandomNumber + ' + ' + secondRandomNumber);
+    const correctAnswer = String(firstRandomNumber + secondRandomNumber);
     const userAnswer = readlineSync.question('Your answer: ');
     // Проверка корректности ответа юзера
     if (userAnswer === correctAnswer) {
@@ -33,8 +33,8 @@ const gameCalc = () => {
 
   // Вычитание
   if (operation === 2) {
-    console.log('Question: ' + FirstRandomNumber + ' - ' + SecondRandomNumber);
-    const correctAnswer = String(FirstRandomNumber - SecondRandomNumber);
+    console.log('Question: ' + firstRandomNumber + ' - ' + secondRandomNumber);
+    const correctAnswer = String(firstRandomNumber - secondRandomNumber);
     const userAnswer = readlineSync.question('Your answer: ');
     // Проверка корректности ответа юзера
     if (userAnswer === correctAnswer) {
@@ -50,8 +50,8 @@ const gameCalc = () => {
 
   // Умножение
   if (operation === 3) {
-    console.log('Question: ' + FirstRandomNumber + ' * ' + SecondRandomNumber);
-    const correctAnswer = String(FirstRandomNumber * SecondRandomNumber);
+    console.log('Question: ' + firstRandomNumber + ' * ' + secondRandomNumber);
+    const correctAnswer = String(firstRandomNumber * secondRandomNumber);
     const userAnswer = readlineSync.question('Your answer: ');
     // Проверка корректности ответа юзера
     if (userAnswer === correctAnswer) {
