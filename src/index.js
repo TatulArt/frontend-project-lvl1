@@ -6,11 +6,14 @@ const username = readlineSync.question('May I have your name? ');
 console.log('Hello, ' + username);
 
 let iterCounter = 0;
-let isAnswerRight = true;
+const isAnswerRight = true;
 
 while (iterCounter < 3 && isAnswerRight === true) {
   // Запуск игры
-  iterCounter += 1;
+  if (isAnswerRight === true) {
+    console.log('Correct!');
+    iterCounter += 1;
+  }
 }
 
 if (iterCounter === 3 && isAnswerRight === true) {
