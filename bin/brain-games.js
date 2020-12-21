@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const readlineSync = require('readline-sync');
+import readlineSync from 'readline-sync';
 
 const nameQuestion = () => {
   const answer = readlineSync.question('May I have your name? ');
