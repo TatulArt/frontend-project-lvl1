@@ -12,19 +12,16 @@ const gameCalc = () => {
 
   // Создание функций для выполнения операций
   const additionOperation = (firstRandomNumber, secondRandomNumber) => {
-    console.log('Question: ' + firstRandomNumber + ' + ' + secondRandomNumber);
     correctAnswer = String(firstRandomNumber + secondRandomNumber);
     return correctAnswer;
   };
 
   const subtractionOperation = (firstRandomNumber, secondRandomNumber) => {
-    console.log('Question: ' + firstRandomNumber + ' - ' + secondRandomNumber);
     correctAnswer = String(firstRandomNumber - secondRandomNumber);
     return correctAnswer;
   };
 
   const multiplicationOperation = (firstRandomNumber, secondRandomNumber) => {
-    console.log('Question: ' + firstRandomNumber + ' * ' + secondRandomNumber);
     correctAnswer = String(firstRandomNumber * secondRandomNumber);
     return correctAnswer;
   };
@@ -50,6 +47,7 @@ const gameCalc = () => {
 
     // Сложение
     if (operation === 1) {
+      console.log('Question: ' + firstRandomNumber + ' + ' + secondRandomNumber);
       correctAnswer = additionOperation(firstRandomNumber, secondRandomNumber);
       makeTest();
     }
@@ -57,6 +55,7 @@ const gameCalc = () => {
 
     // Вычитание
     if (operation === 2) {
+      console.log('Question: ' + firstRandomNumber + ' - ' + secondRandomNumber);
       correctAnswer = subtractionOperation(firstRandomNumber, secondRandomNumber);
       makeTest();
     }
@@ -64,6 +63,7 @@ const gameCalc = () => {
 
     // Умножение
     if (operation === 3) {
+      console.log('Question: ' + firstRandomNumber + ' * ' + secondRandomNumber);
       correctAnswer = multiplicationOperation(firstRandomNumber, secondRandomNumber);
       makeTest();
     }
