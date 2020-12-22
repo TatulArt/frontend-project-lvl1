@@ -10,22 +10,22 @@ const gameCalc = () => {
   console.log('Hello, ' + username);
   console.log('What is the result of the expression?');
 
-  // Создание функций для выполнения операций
-  const additionOperation = (firstRandomNumber, secondRandomNumber) => {
-    correctAnswer = String(firstRandomNumber + secondRandomNumber);
-    return correctAnswer;
-  };
+  const makeOperation = (firstRandomNumber, secondRandomNumber, operation) => {
+    if (operation === 1) {
+      console.log('Question: ' + firstRandomNumber + ' + ' + secondRandomNumber);
+      correctAnswer = String(firstRandomNumber + secondRandomNumber);
+    }
 
-  const subtractionOperation = (firstRandomNumber, secondRandomNumber) => {
-    correctAnswer = String(firstRandomNumber - secondRandomNumber);
-    return correctAnswer;
-  };
+    if (operation === 2) {
+      console.log('Question: ' + firstRandomNumber + ' - ' + secondRandomNumber);
+      correctAnswer = String(firstRandomNumber - secondRandomNumber);
+    }
 
-  const multiplicationOperation = (firstRandomNumber, secondRandomNumber) => {
-    correctAnswer = String(firstRandomNumber * secondRandomNumber);
-    return correctAnswer;
+    if (operation === 3) {
+      console.log('Question: ' + firstRandomNumber + ' * ' + secondRandomNumber);
+      correctAnswer = String(firstRandomNumber * secondRandomNumber);
+    }
   };
-  //
 
   const makeTest = () => {
     const userAnswer = readlineSync.question('Your answer: ');
@@ -45,29 +45,8 @@ const gameCalc = () => {
     const secondRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
     const operation = Math.floor(Math.random() * (4 - 1)) + 1;
 
-    // Сложение
-    if (operation === 1) {
-      console.log('Question: ' + firstRandomNumber + ' + ' + secondRandomNumber);
-      correctAnswer = additionOperation(firstRandomNumber, secondRandomNumber);
-      makeTest();
-    }
-    // Сложение закончилось
-
-    // Вычитание
-    if (operation === 2) {
-      console.log('Question: ' + firstRandomNumber + ' - ' + secondRandomNumber);
-      correctAnswer = subtractionOperation(firstRandomNumber, secondRandomNumber);
-      makeTest();
-    }
-    // Вычитание закончилось
-
-    // Умножение
-    if (operation === 3) {
-      console.log('Question: ' + firstRandomNumber + ' * ' + secondRandomNumber);
-      correctAnswer = multiplicationOperation(firstRandomNumber, secondRandomNumber);
-      makeTest();
-    }
-  // Умножение закончилось
+    makeOperation(firstRandomNumber, secondRandomNumber, operation);
+    makeTest();
   }
 
   if (iterCounter === 3 && isAnswerRight === true) {
