@@ -4,27 +4,32 @@ const gameCalc = () => {
   let iterCounter = 0;
   let isAnswerRight = true;
   let correctAnswer = '';
-  
+
+  console.log('Welcome to the Brain Games!');
+  const username = readlineSync.question('May I have your name? ');
+  console.log('Hello, ' + username);
+  console.log('What is the result of the expression?');
+
   // Создание функций для выполнения операций
   const additionOperation = (firstRandomNumber, secondRandomNumber) => {
     console.log('Question: ' + firstRandomNumber + ' + ' + secondRandomNumber);
     correctAnswer = String(firstRandomNumber + secondRandomNumber);
     return correctAnswer;
-  }
+  };
 
   const subtractionOperation = (firstRandomNumber, secondRandomNumber) => {
     console.log('Question: ' + firstRandomNumber + ' - ' + secondRandomNumber);
     correctAnswer = String(firstRandomNumber - secondRandomNumber);
     return correctAnswer;
-  }
+  };
 
   const multiplicationOperation = (firstRandomNumber, secondRandomNumber) => {
     console.log('Question: ' + firstRandomNumber + ' * ' + secondRandomNumber);
     correctAnswer = String(firstRandomNumber * secondRandomNumber);
     return correctAnswer;
-  }
+  };
   //
-  
+
   const makeTest = () => {
     const userAnswer = readlineSync.question('Your answer: ');
 
@@ -36,12 +41,7 @@ const gameCalc = () => {
       console.log('"' + userAnswer + '" is wrong answer ;(.Correct answer was "' + correctAnswer + '".');
       console.log("Let's try again, " + username + '!');
     }
-  }
-
-  console.log('Welcome to the Brain Games!');
-  const username = readlineSync.question('May I have your name? ');
-  console.log('Hello, ' + username);
-  console.log('What is the result of the expression?');
+  };
 
   while (iterCounter < 3 && isAnswerRight === true) {
     const firstRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
