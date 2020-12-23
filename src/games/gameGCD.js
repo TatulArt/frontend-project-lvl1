@@ -1,49 +1,37 @@
-import readlineSync from 'readline-sync';
+import engine from '../index.js';
 
 const gameGCD = () => {
-  let iterCounter = 0;
-  let isAnswerRight = true;
-
-  console.log('Welcome to the Brain Games!');
-  const username = readlineSync.question('May I have your name? ');
-  console.log('Hello, ' + username);
-  console.log('Find the greatest common divisor of given numbers.');
-
-  while (iterCounter < 3 && isAnswerRight === true) {
-    const getSmallestNumber = (firstNum, secondNum) => {
-      if (firstNum > secondNum) {
-        return secondNum;
-      }
-      return firstNum;
-    };
-
-    const firstRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
-    const secondRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
-    const smallestNumber = getSmallestNumber(firstRandomNumber, secondRandomNumber);
-    let GCD = 1;
-
-    console.log('Question: ' + firstRandomNumber + ' ' + secondRandomNumber);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    for (let i = 1; i <= smallestNumber; i += 1) {
-      if (firstRandomNumber % i === 0 && secondRandomNumber % i === 0) {
-        GCD = String(i);
-      }
+  const getSmallestNumber = (firstNum, secondNum) => {
+    if (firstNum > secondNum) {
+      return secondNum;
     }
 
-    if (userAnswer === GCD) {
-      console.log('Correct!');
-      iterCounter += 1;
-    } else {
-      isAnswerRight = false;
-      console.log('"' + userAnswer + '" is wrong answer ;(.Correct answer was "' + GCD + '".');
-      console.log("Let's try again, " + username + '!');
+    return firstNum;
+  };
+
+  const firstRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
+  const secondRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
+  const smallestNumber = getSmallestNumber(firstRandomNumber, secondRandomNumber);
+
+  const target = 'Find the greatest common divisor of given numbers.';
+  const question = 'Question: ' + firstRandomNumber + ' ' + secondRandomNumber;
+  let correctAnswer = 1;
+
+  for (let i = 1; i <= smallestNumber; i += 1) {
+    if (firstRandomNumber % i === 0 && secondRandomNumber % i === 0) {
+      correctAnswer = String(i);
     }
   }
 
-  if (iterCounter === 3 && isAnswerRight === true) {
-    console.log('Congratulations, ' + username + '!');
-  }
+  const gameResult = {
+    question,
+    correctAnswer,
+    target,
+  };
+
+  return gameResult;
 };
+
+engine(gameGCD);
 
 export default gameGCD;

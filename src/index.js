@@ -1,21 +1,32 @@
-#!/usr/bin/env node
 import readlineSync from 'readline-sync';
+import nameQuestion from './cli.js';
 
-console.log('Welcome to the Brain Games!');
-const username = readlineSync.question('May I have your name? ');
-console.log('Hello, ' + username);
+const engine = (game) => {
+  const username = nameQuestion();
+  let iterCounter = 0;
+  let isAnswerRight = true;
 
-let iterCounter = 0;
-const isAnswerRight = true;
+  while (iterCounter < 3 && isAnswerRight === true) {
+    const gameResult = game(iterCounter);
+    if (iterCounter === 0) {
+      console.log(gameResult.target);
+    }
+    console.log(gameResult.question);
+    const userAnswer = readlineSync.question('Your answer: ');
 
-while (iterCounter < 3 && isAnswerRight === true) {
-  // Запуск игры
-  if (isAnswerRight === true) {
-    console.log('Correct!');
-    iterCounter += 1;
+    if (userAnswer === gameResult.correctAnswer) {
+      console.log('Correct!');
+      iterCounter += 1;
+    } else {
+      isAnswerRight = false;
+      console.log('"' + userAnswer + '" is wrong answer ;(.Correct answer was "' + gameResult.correctAnswer + '".');
+      console.log("Let's try again, " + username + '!');
+    }
   }
-}
 
-if (iterCounter === 3 && isAnswerRight === true) {
-  console.log('Congratulations, ' + username + '!');
-}
+  if (iterCounter === 3 && isAnswerRight === true) {
+    console.log('Congratulations, ' + username + '!');
+  }
+};
+
+export default engine;
