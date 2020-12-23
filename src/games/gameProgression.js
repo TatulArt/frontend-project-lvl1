@@ -14,7 +14,7 @@ const gameProgression = () => {
 
   const correctAnswer = String(questionArray[missingNumberIndex]);
   questionArray[missingNumberIndex] = '..';
-  const question = 'Question: ' + questionArray.join(' ');
+  const question = `Question: ${questionArray.join(' ')}`;
   const target = 'What number is missing in the progression?';
 
   const gameResult = {

@@ -7,4 +7,4 @@ const nameQuestion = () => {
 };
 
 console.log('Welcome to the Brain Games!');
-console.log('Hello, ' + nameQuestion() + '!');
+console.log(`Hello, ${nameQuestion()}!`);

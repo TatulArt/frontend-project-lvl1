@@ -7,17 +7,17 @@ const gameCalc = () => {
 
   const makeOperation = (firstRandomNumber, secondRandomNumber, operation) => {
     if (operation === 1) {
-      question = 'Question: ' + firstRandomNumber + ' + ' + secondRandomNumber;
+      question = `Question:  ${firstRandomNumber} + ${secondRandomNumber}`;
       correctAnswer = String(firstRandomNumber + secondRandomNumber);
     }
 
     if (operation === 2) {
-      question = 'Question: ' + firstRandomNumber + ' - ' + secondRandomNumber;
+      question = `Question:  ${firstRandomNumber} - ${secondRandomNumber}`;
       correctAnswer = String(firstRandomNumber - secondRandomNumber);
     }
 
     if (operation === 3) {
-      question = 'Question: ' + firstRandomNumber + ' * ' + secondRandomNumber;
+      question = `Question:  ${firstRandomNumber} * ${secondRandomNumber}`;
       correctAnswer = String(firstRandomNumber * secondRandomNumber);
     }
   };

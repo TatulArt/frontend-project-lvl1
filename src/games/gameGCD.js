@@ -14,7 +14,7 @@ const gameGCD = () => {
   const smallestNumber = getSmallestNumber(firstRandomNumber, secondRandomNumber);
 
   const target = 'Find the greatest common divisor of given numbers.';
-  const question = 'Question: ' + firstRandomNumber + ' ' + secondRandomNumber;
+  const question = `Question: ${firstRandomNumber} ${secondRandomNumber}`;
   let correctAnswer = 1;
 
   for (let i = 1; i <= smallestNumber; i += 1) {

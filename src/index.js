@@ -19,13 +19,13 @@ const engine = (game) => {
       iterCounter += 1;
     } else {
       isAnswerRight = false;
-      console.log('"' + userAnswer + '" is wrong answer ;(.Correct answer was "' + gameResult.correctAnswer + '".');
-      console.log("Let's try again, " + username + '!');
+      console.log(`${userAnswer} is wrong answer ;(.Correct answer was ${gameResult.correctAnswer}`);
+      console.log(`Let's try again, ${username}!`);
     }
   }
 
   if (iterCounter === 3 && isAnswerRight === true) {
-    console.log('Congratulations, ' + username + '!');
+    console.log(`Congratulations, ${username}!`);
   }
 };
 
