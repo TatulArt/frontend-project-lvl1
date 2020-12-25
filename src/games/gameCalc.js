@@ -1,9 +1,10 @@
-import engine from '../index.js';
+import startGame from '../index.js';
+
+const target = 'What is the result of the expression?';
 
 const gameCalc = () => {
   let correctAnswer = '';
   let question = '';
-  const target = 'What is the result of the expression?';
 
   const makeOperation = () => {
     const firstRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
@@ -30,12 +31,11 @@ const gameCalc = () => {
   const gameResult = {
     question,
     correctAnswer,
-    target,
   };
 
   return gameResult;
 };
 
-engine(gameCalc);
+startGame(gameCalc, target);
 
 export default gameCalc;

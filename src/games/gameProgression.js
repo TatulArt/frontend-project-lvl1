@@ -1,4 +1,6 @@
-import engine from '../index.js';
+import startGame from '../index.js';
+
+const target = 'What number is missing in the progression?';
 
 const gameProgression = () => {
   // Создание массива с прогрессией
@@ -15,17 +17,15 @@ const gameProgression = () => {
   const correctAnswer = String(questionArray[missingNumberIndex]);
   questionArray[missingNumberIndex] = '..';
   const question = `Question: ${questionArray.join(' ')}`;
-  const target = 'What number is missing in the progression?';
 
   const gameResult = {
     question,
     correctAnswer,
-    target,
   };
 
   return gameResult;
 };
 
-engine(gameProgression);
+startGame(gameProgression, target);
 
 export default gameProgression;
