@@ -20,10 +20,6 @@ const gamePrime = () => {
     correctAnswer = 'no';
   }
 
-  if (randomNumber === 1) {
-    isNumberPrime = true;
-  }
-
   const gameResult = {
     question,
     correctAnswer,
