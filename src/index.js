@@ -1,32 +1,29 @@
 import readlineSync from 'readline-sync';
 import nameQuestion from './cli.js';
 
-const engine = (game) => {
+const startGame = (game, target) => {
   const username = nameQuestion();
-  let iterCounter = 0;
-  let isAnswerRight = true;
+  let roundsCount = 0;
 
-  while (iterCounter < 3 && isAnswerRight === true) {
-    const gameResult = game(iterCounter);
-    if (iterCounter === 0) {
-      console.log(gameResult.target);
-    }
-    console.log(gameResult.question);
+  console.log(target);
+  while (roundsCount < 3) {
+    const { question, correctAnswer } = game();
+    console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === gameResult.correctAnswer) {
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      iterCounter += 1;
+      roundsCount += 1;
     } else {
-      isAnswerRight = false;
-      console.log(`"${userAnswer}" is wrong answer ;(.Correct answer was "${gameResult.correctAnswer}"`);
+      console.log(`"${userAnswer}" is wrong answer ;(.Correct answer was "${correctAnswer}"`);
       console.log(`Let's try again, ${username}!`);
+      break;
     }
   }
 
-  if (iterCounter === 3 && isAnswerRight === true) {
+  if (roundsCount === 3) {
     console.log(`Congratulations, ${username}!`);
   }
 };
 
-export default engine;
+export default startGame;
