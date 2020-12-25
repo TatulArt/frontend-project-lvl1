@@ -3,12 +3,12 @@ import run from '../index.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const gameGCD = () => {
-  const getSmallestNumber = (firstNum, secondNum) => {
-    if (firstNum > secondNum) {
-      return secondNum;
+  const getSmallestNumber = (firstNumber, secondNumber) => {
+    if (firstNumber > secondNumber) {
+      return secondNumber;
     }
 
-    return firstNum;
+    return firstNumber;
   };
 
   const firstRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
