@@ -1,6 +1,6 @@
-import startGame from '../index.js';
+import run from '../index.js';
 
-const target = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const gameEven = () => {
   const randomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
@@ -11,14 +11,12 @@ const gameEven = () => {
     correctAnswer = 'no';
   }
 
-  const gameResult = {
+  return {
     question,
     correctAnswer,
   };
-
-  return gameResult;
 };
 
-startGame(gameEven, target);
-
-export default gameEven;
+export default () => {
+  run(gameEven, description);
+};

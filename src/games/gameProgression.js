@@ -1,6 +1,6 @@
-import startGame from '../index.js';
+import run from '../index.js';
 
-const target = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
 const gameProgression = () => {
   // Создание массива с прогрессией
@@ -18,14 +18,12 @@ const gameProgression = () => {
   questionArray[missingNumberIndex] = '..';
   const question = `Question: ${questionArray.join(' ')}`;
 
-  const gameResult = {
+  return {
     question,
     correctAnswer,
   };
-
-  return gameResult;
 };
 
-startGame(gameProgression, target);
-
-export default gameProgression;
+export default () => {
+  run(gameProgression, description);
+};

@@ -1,6 +1,6 @@
-import startGame from '../index.js';
+import run from '../index.js';
 
-const target = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const gamePrime = () => {
   const randomNumber = Math.floor(Math.random() * (101 - 1)) + 1;
@@ -20,14 +20,12 @@ const gamePrime = () => {
     correctAnswer = 'no';
   }
 
-  const gameResult = {
+  return {
     question,
     correctAnswer,
   };
-
-  return gameResult;
 };
 
-startGame(gamePrime, target);
-
-export default gamePrime;
+export default () => {
+  run(gamePrime, description);
+};

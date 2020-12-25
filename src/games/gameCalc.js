@@ -1,6 +1,6 @@
-import startGame from '../index.js';
+import run from '../index.js';
 
-const target = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const gameCalc = () => {
   let correctAnswer = '';
@@ -28,14 +28,12 @@ const gameCalc = () => {
 
   makeOperation();
 
-  const gameResult = {
+  return {
     question,
     correctAnswer,
   };
-
-  return gameResult;
 };
 
-startGame(gameCalc, target);
-
-export default gameCalc;
+export default () => {
+  run(gameCalc, description);
+};
