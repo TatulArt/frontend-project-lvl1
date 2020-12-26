@@ -2,7 +2,7 @@ import run from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const gameGCD = () => {
+const getRoundGCD = () => {
   const getSmallestNumber = (firstNumber, secondNumber) => {
     if (firstNumber > secondNumber) {
       return secondNumber;
@@ -31,5 +31,5 @@ const gameGCD = () => {
 };
 
 export default () => {
-  run(gameGCD, description);
+  run(getRoundGCD, description);
 };

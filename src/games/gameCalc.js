@@ -2,7 +2,7 @@ import run from '../index.js';
 
 const description = 'What is the result of the expression?';
 
-const gameCalc = () => {
+const getRoundCalc = () => {
   let correctAnswer = '';
   let question = '';
 
@@ -35,5 +35,5 @@ const gameCalc = () => {
 };
 
 export default () => {
-  run(gameCalc, description);
+  run(getRoundCalc, description);
 };

@@ -2,7 +2,7 @@ import run from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const gamePrime = () => {
+const getRoundPrime = () => {
   const randomNumber = Math.floor(Math.random() * (101 - 1)) + 1;
   let isNumberPrime = true;
   let correctAnswer = '';
@@ -27,5 +27,5 @@ const gamePrime = () => {
 };
 
 export default () => {
-  run(gamePrime, description);
+  run(getRoundPrime, description);
 };

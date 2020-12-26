@@ -2,7 +2,7 @@ import run from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameEven = () => {
+const getRoundEven = () => {
   const randomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
   const question = `Question: ${randomNumber}`;
   let correctAnswer = 'yes';
@@ -18,5 +18,5 @@ const gameEven = () => {
 };
 
 export default () => {
-  run(gameEven, description);
+  run(getRoundEven, description);
 };
