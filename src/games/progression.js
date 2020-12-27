@@ -1,8 +1,11 @@
 import run from '../index.js';
+import getRandomNumber from '../random-number-utilitie.js';
 
 const description = 'What number is missing in the progression?';
-const getProgession = (firstNumberInProgression) => {
-  const progressionValue = Math.floor(Math.random() * (6 - 1)) + 1;
+
+const getProgession = () => {
+  const firstNumberInProgression = getRandomNumber(30, 1);
+  const progressionValue = getRandomNumber(10, 1);
   const progression = [firstNumberInProgression];
 
   for (let i = 0; i < 9; i += 1) {
@@ -11,9 +14,10 @@ const getProgession = (firstNumberInProgression) => {
   return progression;
 };
 
-const getRound = (randomNumber) => {
-  const progression = getProgession(randomNumber);
-  const missingNumberIndex = Math.floor(Math.random() * (10 - 1)) + 1;
+const getRound = () => {
+  const progression = getProgession();
+  const missingNumberIndex = getRandomNumber(10, 1);
+
   const correctAnswer = String(progression[missingNumberIndex]);
   progression[missingNumberIndex] = '..';
   const question = `Question: ${progression.join(' ')}`;

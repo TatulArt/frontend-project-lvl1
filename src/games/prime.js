@@ -1,4 +1,5 @@
 import run from '../index.js';
+import getRandomNumber from '../random-number-utilitie.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -14,7 +15,8 @@ const getCorrectAnswer = (randomNumber) => {
   return correctAnswer;
 };
 
-const getRound = (randomNumber) => {
+const getRound = () => {
+  const randomNumber = getRandomNumber(100, 1);
   const correctAnswer = getCorrectAnswer(randomNumber);
   const question = `Question: ${randomNumber}`;
 

@@ -1,4 +1,5 @@
 import run from '../index.js';
+import getRandomNumber from '../random-number-utilitie.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -11,7 +12,8 @@ const getCorrectAnswer = (randomNumber) => {
   return correctAnswer;
 };
 
-const getRound = (randomNumber) => {
+const getRound = () => {
+  const randomNumber = getRandomNumber(100, 1);
   const question = `Question: ${randomNumber}`;
   const correctAnswer = getCorrectAnswer(randomNumber);
 

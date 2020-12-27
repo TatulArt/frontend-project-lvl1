@@ -7,9 +7,7 @@ const run = (getRound, description) => {
 
   console.log(description);
   for (let i = 0; i < roundsCount; i += 1) {
-    const firstRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
-    const secondRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
-    const { question, correctAnswer } = getRound(firstRandomNumber, secondRandomNumber);
+    const { question, correctAnswer } = getRound();
     console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
 
