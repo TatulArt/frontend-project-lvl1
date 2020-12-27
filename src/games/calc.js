@@ -2,24 +2,22 @@ import run from '../index.js';
 
 const description = 'What is the result of the expression?';
 
-const makeOperation = () => {
-  const firstRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
-  let secondRandomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
+const makeOperation = (firstRandomNumber, secondRandomNumber) => {
   const operation = Math.floor(Math.random() * (4 - 1)) + 1;
-
+  let SRN = secondRandomNumber;
   let question = `Question: ${firstRandomNumber} + ${secondRandomNumber}`;
 
   if (operation === 2) {
     question = `Question: ${firstRandomNumber} - ${secondRandomNumber}`;
-    secondRandomNumber = -secondRandomNumber;
+    SRN = -secondRandomNumber;
   }
 
   if (operation === 3) {
     question = `Question: ${firstRandomNumber} * ${secondRandomNumber}`;
-    secondRandomNumber = (secondRandomNumber - 1) * firstRandomNumber;
+    SRN = (secondRandomNumber - 1) * firstRandomNumber;
   }
 
-  const correctAnswer = String(firstRandomNumber + secondRandomNumber);
+  const correctAnswer = String(firstRandomNumber + SRN);
 
   return {
     correctAnswer,
@@ -27,8 +25,8 @@ const makeOperation = () => {
   };
 };
 
-const getRoundCalc = () => {
-  const { correctAnswer, question } = makeOperation();
+const getRound = (firstRandomNumber, secondRandomNumber) => {
+  const { correctAnswer, question } = makeOperation(firstRandomNumber, secondRandomNumber);
 
   return {
     question,
@@ -37,5 +35,5 @@ const getRoundCalc = () => {
 };
 
 export default () => {
-  run(getRoundCalc, description);
+  run(getRound, description);
 };

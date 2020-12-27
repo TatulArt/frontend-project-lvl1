@@ -11,8 +11,7 @@ const getCorrectAnswer = (randomNumber) => {
   return correctAnswer;
 };
 
-const getRound = () => {
-  const randomNumber = Math.floor(Math.random() * (30 - 1)) + 1;
+const getRound = (randomNumber) => {
   const question = `Question: ${randomNumber}`;
   const correctAnswer = getCorrectAnswer(randomNumber);
 

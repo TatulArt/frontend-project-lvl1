@@ -1,22 +1,22 @@
 import run from '../index.js';
 
 const description = 'What number is missing in the progression?';
-
-const getRound = () => {
-  // Создание массива с прогрессией
-  const firstNumberInProgression = Math.floor(Math.random() * (21 - 1)) + 1;
+const getProgession = (firstNumberInProgression) => {
   const progressionValue = Math.floor(Math.random() * (6 - 1)) + 1;
-  const missingNumberIndex = Math.floor(Math.random() * (10 - 1)) + 1;
-  const questionArray = [firstNumberInProgression];
+  const progression = [firstNumberInProgression];
 
   for (let i = 0; i < 9; i += 1) {
-    questionArray.push(questionArray[i] + progressionValue);
+    progression.push(progression[i] + progressionValue);
   }
-  // Создание массива с прогрессией завершено
+  return progression;
+};
 
-  const correctAnswer = String(questionArray[missingNumberIndex]);
-  questionArray[missingNumberIndex] = '..';
-  const question = `Question: ${questionArray.join(' ')}`;
+const getRound = (randomNumber) => {
+  const progression = getProgession(randomNumber);
+  const missingNumberIndex = Math.floor(Math.random() * (10 - 1)) + 1;
+  const correctAnswer = String(progression[missingNumberIndex]);
+  progression[missingNumberIndex] = '..';
+  const question = `Question: ${progression.join(' ')}`;
 
   return {
     question,

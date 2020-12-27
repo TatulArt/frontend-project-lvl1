@@ -21,9 +21,7 @@ const getCorrectAnswer = (firstRandomNumber, secondRandomNumber, smallestNumber)
   return correctAnswer;
 };
 
-const getRound = () => {
-  const firstRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
-  const secondRandomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
+const getRound = (firstRandomNumber, secondRandomNumber) => {
   const smallestNumber = getSmallestNumber(firstRandomNumber, secondRandomNumber);
 
   const question = `Question: ${firstRandomNumber} ${secondRandomNumber}`;
