@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import getRoundPrime from '../src/games/gamePrime.js';
+import getRound from '../src/games/prime.js';
 
-getRoundPrime();
+getRound();

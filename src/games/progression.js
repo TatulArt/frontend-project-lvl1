@@ -2,7 +2,7 @@ import run from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
-const getRoundProgression = () => {
+const getRound = () => {
   // Создание массива с прогрессией
   const firstNumberInProgression = Math.floor(Math.random() * (21 - 1)) + 1;
   const progressionValue = Math.floor(Math.random() * (6 - 1)) + 1;
@@ -25,5 +25,5 @@ const getRoundProgression = () => {
 };
 
 export default () => {
-  run(getRoundProgression, description);
+  run(getRound, description);
 };
