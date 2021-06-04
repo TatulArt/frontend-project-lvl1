@@ -2,43 +2,26 @@ import run from '../index.js';
 import getRandomNumber from '../utilities.js';
 
 const description = 'What is the result of the expression?';
+const result = {};
 
 const startRound = () => {
   const operators = ['+', '-', '*'];
   const operatorIndex = getRandomNumber(1, 3);
-  const operation = operators[operatorIndex];
+  const operator = operators[operatorIndex];
 
   const firstNumber = getRandomNumber(1, 30);
   const secondNumber = getRandomNumber(1, 30);
 
   const operations = {
-    '+': (a, b) => {
-      const correctAnswer = String(a + b);
-
-      return {
-        correctAnswer,
-        question: `Question: ${a} + ${b}`,
-      };
-    },
-    '-': (a, b) => {
-      const correctAnswer = String(a - b);
-
-      return {
-        correctAnswer,
-        question: `Question: ${a} - ${b}`,
-      };
-    },
-    '*': (a, b) => {
-      const correctAnswer = String(a * b);
-
-      return {
-        correctAnswer,
-        question: `Question: ${a} * ${b}`,
-      };
-    },
+    '+': (a, b) => String(a + b),
+    '-': (a, b) => String(a - b),
+    '*': (a, b) => String(a * b),
   };
 
-  return operations[operation](firstNumber, secondNumber);
+  result.question = `Question: ${firstNumber} ${operator} ${secondNumber}`;
+  result.correctAnswer = operations[operator](firstNumber, secondNumber);
+
+  return result;
 };
 
 export default () => {
