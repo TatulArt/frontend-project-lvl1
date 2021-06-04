@@ -16,7 +16,7 @@ const getProgession = () => {
   return progression;
 };
 
-const getRound = () => {
+const startRound = () => {
   const progression = getProgession();
   const missingNumberIndex = getRandomNumber(1, 10);
 
@@ -31,5 +31,5 @@ const getRound = () => {
 };
 
 export default () => {
-  run(getRound, description);
+  run(startRound, description);
 };

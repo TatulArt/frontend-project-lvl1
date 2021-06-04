@@ -13,7 +13,7 @@ const isPrime = (number) => {
   return true;
 };
 
-const getRound = () => {
+const startRound = () => {
   const randomNumber = getRandomNumber(1, 100);
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   const question = `Question: ${randomNumber}`;
@@ -25,5 +25,5 @@ const getRound = () => {
 };
 
 export default () => {
-  run(getRound, description);
+  run(startRound, description);
 };

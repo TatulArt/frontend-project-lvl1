@@ -1,13 +1,13 @@
 import readlineSync from 'readline-sync';
 import getUserName from './cli.js';
 
-const run = (getRound, description) => {
+const run = (startRound, description) => {
   const userName = getUserName();
   const roundsCount = 3;
 
   console.log(description);
   for (let i = 0; i < roundsCount; i += 1) {
-    const { question, correctAnswer } = getRound();
+    const { question, correctAnswer } = startRound();
     console.log(question);
 
     const userAnswer = readlineSync.question('Your answer: ');

@@ -4,7 +4,7 @@ import getRandomNumber from '../utilities.js';
 const description = 'What is the result of the expression?';
 const result = {};
 
-const getRound = () => {
+const startRound = () => {
   const operation = getRandomNumber(1, 3);
   const firstNumber = getRandomNumber(1, 30);
   const secondNumber = getRandomNumber(1, 30);
@@ -32,5 +32,5 @@ const getRound = () => {
 };
 
 export default () => {
-  run(getRound, description);
+  run(startRound, description);
 };

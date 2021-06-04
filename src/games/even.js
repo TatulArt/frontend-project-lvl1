@@ -3,7 +3,7 @@ import getRandomNumber from '../utilities.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getRound = () => {
+const startRound = () => {
   const randomNumber = getRandomNumber(1, 100);
   const question = `Question: ${randomNumber}`;
   const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
@@ -15,5 +15,5 @@ const getRound = () => {
 };
 
 export default () => {
-  run(getRound, description);
+  run(startRound, description);
 };
