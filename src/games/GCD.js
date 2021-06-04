@@ -4,7 +4,7 @@ import getRandomNumber from '../utilities.js';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const getCorrectAnswer = (firstNumber, secondNumber) => {
-  let correctAnswer = 1;
+  let correctAnswer;
 
   for (let i = 1; i <= firstNumber; i += 1) {
     if (firstNumber % i === 0 && secondNumber % i === 0) {
