@@ -1,21 +1,13 @@
 import run from '../index.js';
-import getRandomNumber from '../random-number-utilitie.js';
+import getRandomNumber from '../utilities.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getSmallestNumber = (firstNumber, secondNumber) => {
-  if (firstNumber > secondNumber) {
-    return secondNumber;
-  }
-
-  return firstNumber;
-};
-
-const getCorrectAnswer = (firstRandomNumber, secondRandomNumber, smallestNumber) => {
+const getCorrectAnswer = (firstNumber, secondNumber) => {
   let correctAnswer = 1;
 
-  for (let i = 1; i <= smallestNumber; i += 1) {
-    if (firstRandomNumber % i === 0 && secondRandomNumber % i === 0) {
+  for (let i = 1; i <= firstNumber; i += 1) {
+    if (firstNumber % i === 0 && secondNumber % i === 0) {
       correctAnswer = String(i);
     }
   }
@@ -24,12 +16,11 @@ const getCorrectAnswer = (firstRandomNumber, secondRandomNumber, smallestNumber)
 };
 
 const getRound = () => {
-  const firstRandomNumber = getRandomNumber(30, 1);
-  const secondRandomNumber = getRandomNumber(30, 1);
-  const smallestNumber = getSmallestNumber(firstRandomNumber, secondRandomNumber);
+  const firstNumber = getRandomNumber(1, 30);
+  const secondNumber = getRandomNumber(1, 30);
 
-  const question = `Question: ${firstRandomNumber} ${secondRandomNumber}`;
-  const correctAnswer = getCorrectAnswer(firstRandomNumber, secondRandomNumber, smallestNumber);
+  const question = `Question: ${firstNumber} ${secondNumber}`;
+  const correctAnswer = getCorrectAnswer(firstNumber, secondNumber);
 
   return {
     question,

@@ -1,23 +1,23 @@
 import run from '../index.js';
-import getRandomNumber from '../random-number-utilitie.js';
+import getRandomNumber from '../utilities.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getCorrectAnswer = (randomNumber) => {
-  let correctAnswer = 'yes';
+const isPrime = (randomNumber) => {
+  let result = true;
 
   for (let i = 0; i < randomNumber; i += 1) {
     if (randomNumber % i === 0 && i !== randomNumber && i !== 1) {
-      correctAnswer = 'no';
+      result = false;
     }
   }
 
-  return correctAnswer;
+  return result;
 };
 
 const getRound = () => {
-  const randomNumber = getRandomNumber(100, 1);
-  const correctAnswer = getCorrectAnswer(randomNumber);
+  const randomNumber = getRandomNumber(1, 100);
+  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   const question = `Question: ${randomNumber}`;
 
   return {

@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import nameQuestion from './cli.js';
+import getUserName from './cli.js';
 
 const run = (getRound, description) => {
-  const userName = nameQuestion();
+  const userName = getUserName();
   const roundsCount = 3;
 
   console.log(description);

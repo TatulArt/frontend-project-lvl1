@@ -1,34 +1,35 @@
 import run from '../index.js';
-import getRandomNumber from '../random-number-utilitie.js';
+import getRandomNumber from '../utilities.js';
 
 const description = 'What is the result of the expression?';
 
 const makeOperation = () => {
-  const operation = Math.floor(Math.random() * (4 - 1)) + 1;
-  const firstRandomNumber = getRandomNumber(30, 1);
-  let secondRandomNumber = getRandomNumber(30, 1);
-  let question = `Question: ${firstRandomNumber} + ${secondRandomNumber}`;
+  const operation = getRandomNumber(1, 4);
+  const firstNumber = getRandomNumber(1, 30);
+  let secondNumber = getRandomNumber(1, 30);
 
-  if (operation === 2) {
-    question = `Question: ${firstRandomNumber} - ${secondRandomNumber}`;
-    secondRandomNumber = -secondRandomNumber;
-  }
+  let correctAnswer = 1;
+  let question = '';
 
-  if (operation === 3) {
-    question = `Question: ${firstRandomNumber} * ${secondRandomNumber}`;
-    secondRandomNumber = (secondRandomNumber - 1) * firstRandomNumber;
-  }
-
-  const correctAnswer = String(firstRandomNumber + secondRandomNumber);
-
-  return {
-    correctAnswer,
-    question,
-  };
-};
+  const operators = ['+', '-', '*'];
 
 const getRound = () => {
-  const { correctAnswer, question } = makeOperation();
+  switch (operators[operation]) {
+    case '+':
+      correctAnswer = firstNumber + secondNumber;
+      question = `Question: ${firstNumber} + ${secondNumber}`;
+      break;
+    case '-':
+      correctAnswer = firstNumber - secondNumber;
+      question = `Question: ${firstNumber} - ${secondNumber}`;
+      break;
+    case '*':
+      correctAnswer = firstNumber * secondNumber;
+      question = `Question: ${firstNumber} * ${secondNumber}`;
+      break;
+    default:
+      break;
+  }
 
   return {
     question,
@@ -38,4 +39,4 @@ const getRound = () => {
 
 export default () => {
   run(getRound, description);
-};
+}
