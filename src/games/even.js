@@ -3,10 +3,18 @@ import getRandomNumber from '../utilities.js';
 
 const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const startRound = () => {
+const isEven = (number) => {
+  if (number % 2 === 0) {
+    return true;
+  }
+
+  return false;
+};
+
+const generateRound = () => {
   const randomNumber = getRandomNumber(1, 100);
   const question = `Question: ${randomNumber}`;
-  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+  const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
   return {
     question,
@@ -15,5 +23,5 @@ const startRound = () => {
 };
 
 export default () => {
-  run(startRound, description);
+  run(generateRound, description);
 };

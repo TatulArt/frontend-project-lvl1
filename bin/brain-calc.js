@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import getRound from '../src/games/calc.js';
+import generateRound from '../src/games/calc.js';
 
-getRound();
+generateRound();

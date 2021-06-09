@@ -15,7 +15,7 @@ const getCorrectAnswer = (firstNumber, secondNumber) => {
   return correctAnswer;
 };
 
-const startRound = () => {
+const generateRound = () => {
   const firstNumber = getRandomNumber(1, 30);
   const secondNumber = getRandomNumber(1, 30);
 
@@ -29,5 +29,5 @@ const startRound = () => {
 };
 
 export default () => {
-  run(startRound, description);
+  run(generateRound, description);
 };

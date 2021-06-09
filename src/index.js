@@ -1,9 +1,11 @@
 import readlineSync from 'readline-sync';
-import getUserName from './cli.js';
+
+const roundsCount = 3;
 
 const run = (startRound, description) => {
-  const userName = getUserName();
-  const roundsCount = 3;
+  console.log('Welcome to the Brain Games!');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
 
   console.log(description);
   for (let i = 0; i < roundsCount; i += 1) {

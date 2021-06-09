@@ -1,28 +1,35 @@
+/* eslint prefer-const: 0 */
+
 import run from '../index.js';
 import getRandomNumber from '../utilities.js';
 
 const description = 'What number is missing in the progression?';
 
-const getProgession = () => {
-  const firstNumberInProgression = getRandomNumber(1, 30);
-  const progressionStep = getRandomNumber(1, 10);
-  const progressionLength = 9;
+const generateProgession = ({ firstNumberInProgression, progressionStep, progressionLength }) => {
   const progression = [firstNumberInProgression];
 
-  for (let i = 0; i < progressionLength; i += 1) {
-    progression.push(progression[i] + progressionStep);
+  for (let i = 1; i < progressionLength; i += 1) {
+    progression.push(firstNumberInProgression + progressionStep * i);
   }
 
   return progression;
 };
 
-const startRound = () => {
-  const progression = getProgession();
-  const missingNumberIndex = getRandomNumber(1, 10);
+const generateRound = () => {
+  // Параметры для создания прогрессии
+  const progressionOptions = {
+    firstNumberInProgression: getRandomNumber(1, 30),
+    progressionStep: getRandomNumber(1, 10),
+    progressionLength: 9,
+  };
 
-  const question = `Question: ${progression.join(' ')}`;
+  let progression = generateProgession(progressionOptions);
+
+  const missingNumberIndex = getRandomNumber(1, 9);
+
   const correctAnswer = String(progression[missingNumberIndex]);
   progression[missingNumberIndex] = '..';
+  const question = `Question: ${progression.join(' ')}`;
 
   return {
     question,
@@ -31,5 +38,5 @@ const startRound = () => {
 };
 
 export default () => {
-  run(startRound, description);
+  run(generateRound, description);
 };

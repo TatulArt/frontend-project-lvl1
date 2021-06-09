@@ -10,7 +10,6 @@
     "brain-progression": "bin/brain-progression.js",
     "brain-prime": "bin/brain-prime.js"
   },
-  "main": "brain-games.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,7 +25,6 @@
   "type": "module",
   "homepage": "https://github.com/TatulArt/frontend-project-lvl1#readme",
   "dependencies": {
-    "esm": "^3.2.25",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
