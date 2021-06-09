@@ -16,7 +16,6 @@ const generateProgession = ({ firstNumberInProgression, progressionStep, progres
 };
 
 const generateRound = () => {
-  // Параметры для создания прогрессии
   const progressionOptions = {
     firstNumberInProgression: getRandomNumber(1, 30),
     progressionStep: getRandomNumber(1, 10),
