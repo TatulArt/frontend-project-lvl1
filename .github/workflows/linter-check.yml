@@ -1,4 +1,4 @@
-name: LinterCheck
+name: linter-check
 
 on:
   push:
