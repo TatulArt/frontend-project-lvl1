@@ -1,3 +1,13 @@
+You can install Brain Games using npm:
+    npm install brainGames
+
+To run Brain Games use:
+    node -r esm bin/brain-games.js
+
+    or
+
+    make start
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/TatulArt/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/TatulArt/frontend-project-lvl1/actions)
 [![ESLint Status](https://github.com/TatulArt/frontend-project-lvl1/workflows/LinterStarter/badge.svg)](https://github.com/TatulArt/frontend-project-lvl1/actions)
