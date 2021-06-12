@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import generateRound from '../src/games/prime.js';
+import startGame from '../src/games/prime.js';
 
-generateRound();
+startGame();
