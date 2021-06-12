@@ -18,7 +18,7 @@ const generateRound = () => {
   const firstNumber = getRandomNumber(1, 30);
   const secondNumber = getRandomNumber(1, 30);
 
-  const question = `Question: ${firstNumber} ${operator} ${secondNumber}`;
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
   const correctAnswer = operations[operator](firstNumber, secondNumber);
 
   return {

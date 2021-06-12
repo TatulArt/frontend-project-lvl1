@@ -13,7 +13,7 @@ const isEven = (number) => {
 
 const generateRound = () => {
   const randomNumber = getRandomNumber(1, 100);
-  const question = `Question: ${randomNumber}`;
+  const question = String(randomNumber);
   const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
   return {

@@ -5,10 +5,10 @@ import getRandomNumber from '../utilities.js';
 
 const description = 'What number is missing in the progression?';
 
-const generateProgession = ({ firstNumberInProgression, progressionStep, progressionLength }) => {
-  const progression = [firstNumberInProgression];
+const generateProgession = (firstNumberInProgression, progressionStep, progressionLength) => {
+  const progression = [];
 
-  for (let i = 1; i < progressionLength; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     progression.push(firstNumberInProgression + progressionStep * i);
   }
 
@@ -16,19 +16,19 @@ const generateProgession = ({ firstNumberInProgression, progressionStep, progres
 };
 
 const generateRound = () => {
-  const progressionOptions = {
-    firstNumberInProgression: getRandomNumber(1, 30),
-    progressionStep: getRandomNumber(1, 10),
-    progressionLength: 9,
-  };
+  const firstNumberInProgression = getRandomNumber(1, 30);
+  const progressionStep = getRandomNumber(1, 10);
+  const progressionLength = 8;
 
-  let progression = generateProgession(progressionOptions);
+  let progression = generateProgession(
+    firstNumberInProgression, progressionStep, progressionLength,
+  );
 
-  const missingNumberIndex = getRandomNumber(1, 9);
+  const missingNumberIndex = getRandomNumber(1, 8);
 
   const correctAnswer = String(progression[missingNumberIndex]);
   progression[missingNumberIndex] = '..';
-  const question = `Question: ${progression.join(' ')}`;
+  const question = progression.join(' ');
 
   return {
     question,

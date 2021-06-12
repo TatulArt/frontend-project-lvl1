@@ -19,7 +19,7 @@ const generateRound = () => {
   const firstNumber = getRandomNumber(1, 30);
   const secondNumber = getRandomNumber(1, 30);
 
-  const question = `Question: ${firstNumber} ${secondNumber}`;
+  const question = `${firstNumber} ${secondNumber}`;
   const correctAnswer = getCorrectAnswer(firstNumber, secondNumber);
 
   return {
