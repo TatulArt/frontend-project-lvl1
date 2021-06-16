@@ -1,10 +1,10 @@
 You can install Brain Games using npm:
     
-    npm install brainGames
+    npm install brainGames -g
 
 To run Brain Games use:
     
-    node bin/brain-games.js
+    brain-games
 
     or
 
