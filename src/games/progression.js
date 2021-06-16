@@ -24,7 +24,7 @@ const generateRound = () => {
     firstNumberInProgression, progressionStep, progressionLength,
   );
 
-  const missingNumberIndex = getRandomNumber(1, 8);
+  const missingNumberIndex = getRandomNumber(1, progressionLength);
 
   const correctAnswer = String(progression[missingNumberIndex]);
   progression[missingNumberIndex] = '..';
